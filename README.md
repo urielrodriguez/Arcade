@@ -54,3 +54,18 @@ scores are not swapped.
 Example 2: At the end of the turn, the players have scores of 1 and 0. 3<sup>1+0</sup> = 3 and 3 == 3, therefore the 
 scores are swapped.
 
+## 15 Puzzle 
+
+### Rules & Instructions
+The goal of the game is to place the tiles from 1 to 15 in order, with the blank tile at the end.
+
+Click on the tiles to move them. Click 'New Game' to start a new game. 
+
+## Pig
+
+### Rules & Instructions
+The goal of the game is to reach the specified number of points by rolling the pair of dice. 
+If no goal score is provided, the default goal score is 100.
+
+The rules are simple: if you roll a one, your round score is 0 and your turn ends. If you roll a 
+pair of sixes, your total score goes back to 0.
