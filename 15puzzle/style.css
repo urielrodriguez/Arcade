@@ -1,0 +1,88 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to bottom right, #8A7BAF, #718EA4, #C181AD);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    top: 50%;
+    left: 50%;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    background-color: #A15088;
+    border-radius: 5px;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: 80px 80px 80px 80px;
+    grid-template-rows: 80px 80px 80px 80px;
+}
+
+.grid button {
+    background-color: #d3cfcf;
+    color: #29506D;
+    font-size: 24px;
+    font-family: 'Patrick Hand', cursive;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.grid button:focus {
+    outline: none;
+}
+
+#empty {
+    background-color: rgb(143, 61, 117);
+    border: none;
+}
+
+header {
+    font-size: 50px;
+    font-family: 'Patrick Hand', cursive;
+    margin-bottom: 50px;
+}
+
+.header {
+    margin-bottom: 15px;
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+}
+
+.header button {
+    border: none;
+    background-color: #496D89;
+    border-radius: 5px;
+    font-size: 25px;
+    font-family: 'Patrick Hand', cursive;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.header button:focus {
+    outline: none;
+}
+
+.header button:hover {
+    color: #d3cfcf;
+    transition: color 0.2s;
+}
+
+.header span {
+    font-size: 25px;
+    font-family: 'Patrick Hand', cursive;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}

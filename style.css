@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #fff;
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility; 
+}
+
+header {
+    background-image: linear-gradient(#00000070, #00000070), url(img/arcade.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.head {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.button {
+    align-self: center;
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    cursor: pointer;
+    background-color: #810000;
+    color: #ffffff;
+    width: 150px;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #ffffff;
+    color: #810000;
+    transition: color 0.5s;
+    transition: background-color 0.5s;
+}
+
+.section-title-box {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.section-title {
+    color: #810000;
+    margin-top: 70px;
+}
+
+.section-title:after {
+    display: block;
+    height: 2px;
+    background-color: #810000;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.games-box {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.games-box h3 {
+    color: #810000;
+    margin-bottom: 15px;
+}
+
+.games-box p {
+    color: #000000;
+    text-align: justify;
+}
+
+.game-1-box {
+    flex: 0 0 25%;
+    text-align: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.game-2-box {
+    flex: 0 0 25%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.game-3-box {
+    flex: 0 0 25%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.games-box img {
+    width: 17%;
+    margin-bottom: 5px;
+}
+
+.games-box .button {
+    font-size: 15px;
+    margin-top: 15px;
+    color: #ffffff;
+}
+
+.games-box .button:hover {
+    background-color: #ffffff;
+    color: #810000;
+    transition: color 0.5s;
+    transition: background-color 0.5s;
+}
+
+footer {
+    background-color: #303030;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+footer p {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 17px;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #810000;
+    transition: color 0.5s;
+}

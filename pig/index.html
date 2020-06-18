@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Julee&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>The Game of Pig</title>
+    </head>
+    <body>
+        <div class="box">
+            <div class="title-box">
+                <h1>The Game of Pig</h1>
+                <img src="img/pig.png" alt="pig">
+            </div>
+            <div class="players-box">
+                <div class="player-0-box active">
+                    <h1 class="player-name" id="name-0">Player 1</h1>
+                    <h1 class="player-score" id="score-0">0</h1>
+                </div>
+                <div class="dice">
+                    <img src="img/dice-5.png" alt="Dice" class="dice" id="dice-1">
+                    <img src="img/dice-5.png" alt="Dice" class="dice" id="dice-2">
+                </div>
+                <div class="player-1-box">
+                    <h1 class="player-name" id="name-1">Player 2</h1>
+                    <h1 class="player-score" id="score-1">0</h1>
+                </div>
+            </div>
+            <div class="bottom-box">
+                <div class="player-0-round-score">
+                    <h1 class="round-score-title">Round Score</h1>
+                    <h1 class="round-score" id="round-score-0">0</h1>
+                </div>
+                <div class="decisions">
+                    <button class="btn-new">New Game</button>
+                    <button class="btn-roll">Roll Dice</button>
+                    <button class="btn-hold">Hold</button>
+                    <input type="text" placeholder="Goal Score" class="goal-score">
+                </div>
+                <div class="player-1-round-score">
+                    <h1 class="round-score-title">Round Score</h1>
+                    <h1 class="round-score" id="round-score-1">0</h1>
+                </div>
+            </div>  
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>

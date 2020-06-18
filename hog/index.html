@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Julee&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>The Game of Hog</title>
+    </head>
+    <body>
+        <div class="box">
+            <div class="title-box">
+                <div class="player-0-box active">
+                    <h1 class="player-name" id="name-0">Player 1</h1>
+                    <h1 class="score" id="score-0">0</h1>
+                </div>
+                <div class="title">
+                    <h1>The Game of Hog</h1>
+                    <img src="img/pig.png" alt="pig">
+                </div>
+                <div class="player-1-box">
+                    <h1 class="player-name" id="name-1">Player 2</h1>
+                    <h1 class="score" id="score-1">0</h1>
+                </div>
+            </div>
+            <div class="dice-box">
+                <div>
+                    <button class="btn-new">New Game</button>
+                </div>
+                <div class="dice">
+                    <img src="img/dice-5.png" alt="Dice" class="dice" id="dice-1">
+                    <img src="img/dice-5.png" alt="Dice" class="dice" id="dice-2">
+                    <img src="img/dice-5.png" alt="Dice" class="dice" id="dice-3">
+                    <img src="img/dice-5.png" alt="Dice" class="dice" id="dice-4">
+                    <img src="img/dice-5.png" alt="Dice" class="dice" id="dice-5">
+                </div>
+            </div>
+            <div class="bottom-box">
+                <div class="game-rules">
+                    <div class="rules-header">
+                        <p>Select Game Rules</p>
+                    </div>
+                    <div class="rule"> 
+                        <input type="checkbox" id="free-bacon" name="free-bacon">
+                        <label for="free-bacon">Free Bacon</label>
+                    </div>
+                    <div class="rule"> 
+                        <input type="checkbox" id="feral-hogs" name="feral-hogs">
+                        <label for="feral-hogs">Feral Hogs</label>
+                    </div>
+                    <div class="rule">
+                        <input type="checkbox" id="swine-swap" name="swine-swap">
+                        <label for="swine-swap">Swine Swap</label>
+                    </div>
+                </div>
+                <div class="decisions">
+                    <button class="btn-roll">Roll Dice</button>
+                    <input type="text" placeholder="Goal Score" class="goal-score">
+                    <input type="text" placeholder="Number of Dice" class="number-of-dice">
+                </div>
+            </div>  
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
