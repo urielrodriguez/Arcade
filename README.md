@@ -5,6 +5,7 @@ A collection of games written in Javascript
 * Hog
 * 15 Puzzle
 * Pig
+* Rock Paper Scissors
 
 ## Hog
 
