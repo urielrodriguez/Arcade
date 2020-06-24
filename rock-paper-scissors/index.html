@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <title>Rock - Paper - Scissors</title>
+    </head>
+    <body>
+        <header>
+            <h1>Rock - Paper - Scissors</h1>
+        </header>
+        <div class="score-board">
+            <div class="score-board-title">Score</div>
+            <div class="score-board-players">
+                <div class="player" id="user">User</div>
+                <span id="user-score">0</span>:<span id="cpu-score">0</span>
+                <div class="player" id="cpu">CPU</div>
+            </div>
+        </div>
+        <div class="game-result">
+            <p id="result">Pick an option to start!</p>
+            <p id="winner"></p>
+        </div>
+        <div class="options">
+            <div class="option" id="rock">
+                <img src="img/rock.png" alt="rock">
+            </div>
+            <div class="option" id="paper">
+                <img src="img/paper.png" alt="paper">
+            </div>
+            <div class="option" id="scissors">
+                <img src="img/scissors.png" alt="scissors">
+            </div>
+        </div>
+        <p id="option-label">Pick an option!</p>
+        <footer>
+            <a target="_blank" href="https://icons8.com/icons/set/hand">Hand</a>, <a target="_blank" href="https://icons8.com/icons/set/hand-scissors">Hand Scissors</a> and other icons by <a target="_blank" href="https://icons8.com">Icons8</a>
+        </footer>
+        <script src="app.js"></script>
+    </body>
+</html>
