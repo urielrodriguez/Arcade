@@ -7,6 +7,14 @@ A collection of games written in Javascript
 * Pig
 * Rock Paper Scissors
 
+## Pacman Baseball
+A baseball version of the classic game of pacman. In this version, Pacman is the Los Angeles Dodgers and the
+ghosts are their division rivals, the San Francisco Giants, Arizona Diamonbacks, San Diego Padres, and Colorado 
+Rockies. Additional functionality and design comming soon!
+
+### Ghost Search
+Currently, the ghosts move randomly. However, I will soon add a more complex search algorithm.
+
 ## Hog
 
 ### Rules & Instructions

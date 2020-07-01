@@ -115,12 +115,31 @@ header {
     margin-left: 15px;
 }
 
-.game-4-box p {
+.game-4-box {
+    flex: 0 0 25%;
+    text-align: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.game-5-box {
+    flex: 0 0 25%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.game-5-box p {
     text-align: center;
 }
 
 .game-4-box img {
-    width: 12%;
+    width: 17%;
+    margin-bottom: 5px;
+}
+
+.game-5-box img {
+    width: 17%;
     margin-bottom: 5px;
 }
 
