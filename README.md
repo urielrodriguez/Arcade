@@ -2,6 +2,7 @@
 A collection of games written in Javascript
 
 ## Available Games
+* Pacman Baseball
 * Hog
 * 15 Puzzle
 * Pig

@@ -69,3 +69,10 @@ h1, h3 {
     height: 17px;
     margin: 0 auto;
 }
+
+.scared-ghost {
+    background-color: white;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 10px;
+}

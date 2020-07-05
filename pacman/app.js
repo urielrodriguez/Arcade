@@ -161,6 +161,8 @@ function gloveEaten() {
         glove.parentNode.removeChild(glove);
         score += 10;
         scoreDisplay.innerHTML = score;
+        ghosts.forEach(ghost => ghost.isScared = true);
+        setTimeout(unScareGhosts, 10000);
     }
 }
 
@@ -205,6 +207,7 @@ function moveGhost(ghost) {
         if (!boxes[ghost.currentIndex + direction].classList.contains('ghost') && !boxes[ghost.currentIndex + direction].classList.contains('wall')) {
             // Remove ghost image
             boxes[ghost.currentIndex].classList.remove('ghost');
+            boxes[ghost.currentIndex].classList.remove('scared-ghost');
             let rival = document.getElementById(ghost.id);
             rival.parentNode.removeChild(rival);
             // Draw ball image
@@ -231,6 +234,14 @@ function moveGhost(ghost) {
         else {
             direction = randomMove();
         }
+        if (ghost.isScared) {
+            boxes[ghost.currentIndex].classList.add('scared-ghost');
+        }
+        if (ghost.isScared && boxes[ghost.currentIndex].classList.contains('pacman')) {
+            boxes[ghost.currentIndex].classList.remove('ghost', 'scared-ghost');
+            ghost.currentIndex = ghost.startIndex;
+            boxes[ghost.currentIndex].classList.add('ghost');
+        }
     }, ghost.speed)
 }
 
@@ -241,7 +252,7 @@ function moveGhost(ghost) {
 // Checks if the game is over
 // Game is over when a ghost collides with pacman
 function gameOver() {
-    if (boxes[pacmanPos].classList.contains('ghost')) {
+    if (boxes[pacmanPos].classList.contains('ghost') && !boxes[pacmanPos].classList.contains('scared-ghost')) {
         const resultRight = document.querySelector('.result-right');
         const resultLeft = document.querySelector('.result-left');
         resultRight.setAttribute('id', 'game-over');
@@ -279,4 +290,13 @@ function randomMove() {
     const directions = [-1, +1, width, -width];
     const direction = directions[Math.floor(Math.random() * directions.length)];
     return direction
+}
+
+function smartMove() {
+    
+}
+
+// Returns ghost to their normal un-scared state
+function unScareGhosts() {
+    ghosts.forEach(ghost => ghost.isScared = false);
 }
