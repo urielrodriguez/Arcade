@@ -5,6 +5,7 @@
 const scoreDisplay = document.getElementById('score');
 const width = 28; // The width of the grid
 let score = 0;
+let displayScore = 0;
 const grid = document.querySelector('.grid');
 // Legend
 // - 0: coin -> ball
@@ -150,7 +151,9 @@ function baseballEaten() {
         let ball = document.getElementById(pacmanPos);
         ball.parentNode.removeChild(ball);
         score ++;
-        scoreDisplay.innerHTML = score;
+        displayScore ++;
+        scoreDisplay.innerHTML = displayScore;
+        console.log(score);
     }
 }
 
@@ -160,9 +163,11 @@ function gloveEaten() {
         let glove = document.getElementById(pacmanPos);
         glove.parentNode.removeChild(glove);
         score += 10;
-        scoreDisplay.innerHTML = score;
+        displayScore += 10;
+        scoreDisplay.innerHTML = displayScore;
         ghosts.forEach(ghost => ghost.isScared = true);
         setTimeout(unScareGhosts, 10000);
+        console.log(score);
     }
 }
 
@@ -183,9 +188,9 @@ class Ghost {
 }
 
 ghosts = [
-    new Ghost('az', './img/az.png', 293, 250),
-    new Ghost('col', './img/col.png', 376, 400),
-    new Ghost('sd', './img/sd.png', 351, 300),
+    new Ghost('az', './img/az.png', 297, 250),
+    new Ghost('col', './img/col.png', 290, 400),
+    new Ghost('sd', './img/sd.png', 298, 300),
     new Ghost('sf', './img/sf.png', 294, 500)
 ]
 
@@ -202,9 +207,10 @@ ghosts.forEach(ghost => {
 ghosts.forEach(ghost => moveGhost(ghost));
 
 function moveGhost(ghost) {
-    let direction = randomMove();
+    //let direction = randomMove();
+    let direction = smartMove(ghost);
     ghost.timerId = setInterval(() => {
-        if (!boxes[ghost.currentIndex + direction].classList.contains('ghost') && !boxes[ghost.currentIndex + direction].classList.contains('wall')) {
+        if (!boxes[ghost.currentIndex + direction].classList.contains('ghost') && !boxes[ghost.currentIndex + direction].classList.contains('wall') && direction) {
             // Remove ghost image
             boxes[ghost.currentIndex].classList.remove('ghost');
             boxes[ghost.currentIndex].classList.remove('scared-ghost');
@@ -241,6 +247,8 @@ function moveGhost(ghost) {
             boxes[ghost.currentIndex].classList.remove('ghost', 'scared-ghost');
             ghost.currentIndex = ghost.startIndex;
             boxes[ghost.currentIndex].classList.add('ghost');
+            displayScore += 100;
+            scoreDisplay.innerHTML = displayScore;
         }
     }, ghost.speed)
 }
@@ -267,7 +275,7 @@ function gameOver() {
 // Checks if the game has been won
 // Max score is 274
 function win() {
-    if (score === 274) {
+    if (score === 273) {
         const resultRight = document.querySelector('.result-right');
         const resultLeft = document.querySelector('.result-left');
         resultRight.setAttribute('id', 'win');
@@ -292,11 +300,37 @@ function randomMove() {
     return direction
 }
 
-function smartMove() {
-    
+function smartMove(ghost) {
+    let direction = randomMove();
+    const [ghostX, ghostY] = getCoords(ghost.currentIndex);
+    const [pacmanX, pacmanY] = getCoords(pacmanPos);
+    const [ghostNextX, ghostNextY] = getCoords(ghost.currentIndex + direction);
+
+    function xCloser() {
+        if ((ghostNextX - pacmanX) > (ghostX - pacmanX)) {
+            return true;
+        }
+        return false;
+    }
+    function yCloser() {
+        if ((ghostNextY - pacmanY) > (ghostY - pacmanY)) {
+            return true;
+        }
+        return false;
+    }
+
+    if (xCloser() || yCloser()) {
+        return direction;
+    }
+    return false;
 }
 
 // Returns ghost to their normal un-scared state
 function unScareGhosts() {
     ghosts.forEach(ghost => ghost.isScared = false);
+}
+
+// Returns the x, y coordinates of the given index
+function getCoords(index) {
+    return [index % width, Math.floor(index / width)];
 }
